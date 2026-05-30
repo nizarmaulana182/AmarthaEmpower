@@ -2,16 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\CommunityPostController;
 
 Route::get('/', function () {
     return view('landing');
@@ -55,4 +46,6 @@ Route::get('/admin/loans', function () {
 
 Route::get('/admin/payments', function () {
     return view('admin-payments');
+
+Route::get('/community', [CommunityPostController::class, 'index'])->name('community.index');
 });
